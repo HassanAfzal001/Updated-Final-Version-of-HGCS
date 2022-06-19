@@ -1,0 +1,59 @@
+.SelectionItemCard {
+  display: flex;
+  padding: 1vmax;
+  height: 8vmax;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+.SelectionItemCard > img {
+  width: 5vmax;
+}
+
+.SelectionItemCard > div {
+  display: flex;
+  margin: 0.3vmax 1vmax;
+  flex-direction: column;
+}
+
+.SelectionItemCard > div > a {
+  font: 300 0.9vmax cursive;
+  color: rgba(24, 24, 24, 0.815);
+  text-decoration: none;
+}
+
+.SelectionItemCard > div > span {
+  font: 300 0.9vmax "Roboto";
+  color: rgba(24, 24, 24, 0.815);
+}
+
+.SelectionItemCard > div > p {
+  color: tomato;
+  font: 100 0.8vmax "Roboto";
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .SelectionItemCard {
+    padding: 3vmax;
+    height: 25vmax;
+  }
+  .SelectionItemCard > img {
+    width: 10vmax;
+  }
+
+  .SelectionItemCard > div {
+    margin: 1vmax 2vmax;
+  }
+
+  .SelectionItemCard > div > a {
+    font: 300 2vmax cursive;
+  }
+
+  .SelectionItemCard > div > span {
+    font: 300 1.9vmax "Roboto";
+  }
+
+  .SelectionItemCard > div > p {
+    font: 100 1.8vmax "Roboto";
+  }
+}

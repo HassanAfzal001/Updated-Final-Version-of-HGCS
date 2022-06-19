@@ -1,0 +1,24 @@
+.appointments-container h1{
+    text-align: center;
+}
+.appointments-container{
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    margin: 120px;
+    background: linear-gradient(to right, aqua, yellow);
+}
+.appointments-status-pending{
+    color: red !important;
+}
+.appointments-status-accepted{
+    color: green !important;
+}
+.notification-delete-button{
+    border:none !important;
+    border-radius: 10px !important;
+}
+.notification-delete-button:hover{
+    color:#fafafa !important;
+    background-color: black !important;
+}
