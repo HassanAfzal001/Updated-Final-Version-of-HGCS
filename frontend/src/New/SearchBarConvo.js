@@ -62,7 +62,7 @@ const SearchBarConvo = ({ placeholder, data, newConversation }) => {
           )}
         </div>
       </div>
-      {filteredData.length != 0 && (
+      {filteredData.length !== 0 && (
         <div className="dataResult">
           {filteredData.slice(0, 6).map((value, key) => {
             return (

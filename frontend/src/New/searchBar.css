@@ -1,24 +1,27 @@
 .searchInputs {
     margin-top: 20px;
     display: flex;
+    color:white;
   }
   
   .search input {
-    background: linear-gradient(to right, lightgrey, white);
-    border: 0;
+    background:lightblue;
+    border: 1px;
     border-radius: 2px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
+    border-color: black;
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 1px;
     font-size: 18px;
     padding: 15px;
-    height: 30px;
+    height: 47px;
     width: 300px;
+    height:3vmax;
   }
   
   .searchIcon {
-    height: 60px;
+    height: 0px;
     width: 50px;
-    background-color: white;
+    color: navy;
     display: grid;
     place-items: center;
   }
@@ -34,7 +37,7 @@
     margin-top: 5px;
     width: 300px;
     height: 200px;
-    background: linear-gradient(to right, green, aqua);
+    background: linear-gradient(to right, white, lightblue);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     overflow: hidden;
     overflow-y: auto;

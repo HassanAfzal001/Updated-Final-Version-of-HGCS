@@ -27,11 +27,11 @@ const AppointmentRequests = ({
     const fetchData = async () => {
       // get the data from the api
       let res;
-      if (user.role == "Doctor") {
+      if (user.role === "Doctor") {
         res = await axios.get(
           `http://localhost:4000/appointments/doctor/${userId}`
         );
-      } else if (user.role == "Patient") {
+      } else if (user.role === "Patient") {
         res = await axios.get(
           `http://localhost:4000/appointments/patient/${userId}`
         );
@@ -53,8 +53,8 @@ const AppointmentRequests = ({
   const handleDeleteAppointment = (appointment) => {
     // delete an appointment
     // console.log(appointment);
-    const r = window.confirm("Would you like to remove this event?");
-    if (r === true) {
+    const r = window.confirm("Would you like to remove this appointment?");
+    if (r === true && user.role === "Doctor") {
       socket.emit("sendNotification", {
         from: user._id,
         to: appointment.userId,
@@ -84,6 +84,20 @@ const AppointmentRequests = ({
           console.log(res.data);
         });
     }
+    else if (r === true && user.role === "Patient") {
+      
+      
+    
+      axios
+        .delete("http://localhost:4000/appointments/deleteAppointment", {
+          data: { _id: appointment._id },
+        })
+        .then(() => {
+          console.log("Deleted");
+        });
+
+      
+    }
   };
 
   useEffect(() => {
@@ -99,7 +113,8 @@ const AppointmentRequests = ({
   }, [socket, notifications]);
 
   const handlePending = (appointment) => {
-    if (appointment.status !== "Accepted") {
+    
+    if (appointment.status !== "Accepted" && user.role === "Doctor") {  
       const r = window.confirm("Would you like to accept this request?");
       if (r === true) {
         socket.emit("sendNotification", {
@@ -107,6 +122,7 @@ const AppointmentRequests = ({
           to: appointment.userId,
           text: "Accepted",
         });
+        
         const myObj = {
           _id: appointment._id,
           need: appointment.need,
@@ -117,6 +133,8 @@ const AppointmentRequests = ({
           appointmentDate: appointment.appointmentDate,
           status: "Accepted",
         };
+        const arr = [];
+        arr.push(myObj);
         const myObjj = {
           senderId: user._id,
           senderName: user.name,
@@ -157,6 +175,9 @@ const AppointmentRequests = ({
     var strTime = hours + ":" + minutes + " " + ampm;
     return strTime;
   };
+  const similarTime = (date) => {
+    
+  };
 
   return (
     <div className="appointments-container">
@@ -178,7 +199,7 @@ const AppointmentRequests = ({
             </tr>
           </thead>
           <tbody>
-            {allAppointments?.length != 0 ? (
+            {allAppointments?.length !== 0 ? (
               allAppointments?.map((myObj, key) => {
                 var time = moment.utc(myObj.appointmentDate).format("HH:mm");
                 time = formatAMPM(time);

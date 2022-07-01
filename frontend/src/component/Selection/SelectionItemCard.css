@@ -16,19 +16,19 @@
 }
 
 .SelectionItemCard > div > a {
-  font: 300 0.9vmax cursive;
-  color: rgba(24, 24, 24, 0.815);
+  font: 300 1.9vmax cursive;
+  color:black;
   text-decoration: none;
 }
 
 .SelectionItemCard > div > span {
-  font: 300 0.9vmax "Roboto";
-  color: rgba(24, 24, 24, 0.815);
+  font: 300 1.9vmax "Roboto";
+  color:black;
 }
 
 .SelectionItemCard > div > p {
-  color: tomato;
-  font: 100 0.8vmax "Roboto";
+  color: navy;
+  font: 100 1.8vmax "Roboto";
   cursor: pointer;
 }
 

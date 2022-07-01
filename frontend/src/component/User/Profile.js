@@ -76,11 +76,11 @@ const Profile = ({ history, notifications }) => {
         <Fragment>
           <MetaData title={`${user.name}'s Profile`} />
           <div className="profileContainer">
-            <div style={{ marginTop: "70px" }}>
-              {user.role == "Doctor" ? (
-                <h1 style={{ marginLeft: "auto" }}>DR. {user.name} Profile</h1>
+            <div style={{ margin: "30px" }}>
+              {user.role === "Doctor" ? (
+                <h1 style={{ marginLeft: "220px" }}>Dr. {user.name}</h1>
               ) : (
-                <h1 style={{ marginLeft: "auto" }}>Mr {user.name} Profile</h1>
+                <h1 style={{ marginLeft: "220px" }}>Mr {user.name}</h1>
               )}
               <img src={user.avatar.url} alt={user.name} />
               <Link to="/me/update">Edit Profile</Link>

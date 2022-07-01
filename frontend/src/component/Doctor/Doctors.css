@@ -3,10 +3,10 @@
   width: 15vw;
   border-bottom: 1px solid rgba(0, 0, 0, 0.171);
   padding: 2vmax;
-  color: rgba(0, 0, 0, 0.678);
+  color: white;
   font: 500 1.5vmax "Roboto";
   text-align: center;
-  background: linear-gradient(to right, aqua, blue);
+  background: linear-gradient(to right, navy, blue);
 }
 
 .doctors {
@@ -15,7 +15,15 @@
   padding: 0 5vmax;
   justify-content: center;
   min-height: 30vh;
-  background: linear-gradient(to right, aqua, purple);
+  background: linear-gradient(to right, white, lightblue);
+}
+.userdoctors {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 5vmax;
+  justify-content: center;
+  min-height: 30vh;
+  background: linear-gradient(to right, white, lightblue);
 }
 
 .paginationBox {
@@ -31,13 +39,14 @@
 }
 
 .page-item {
-  background: linear-gradient(to right, aqua, purple);
+  background: linear-gradient(to right, white, lightblue);
   list-style: none;
   border: 1px solid rgba(0, 0, 0, 0.178);
   padding: 1vmax 1.5vmax;
   transition: all 0.3s;
   cursor: pointer;
 }
+
 .page-item:first-child {
   border-radius: 5px 0 0 5px;
 }
@@ -45,6 +54,7 @@
 .page-item:last-child {
   border-radius: 0 5px 5px 0;
 }
+
 .page-link {
   text-decoration: none;
   font: 300 0.7vmax "Roboto";
@@ -72,7 +82,12 @@
   width: 10vmax;
   position: absolute;
   top: 10vmax;
+  font-size:2px;
   left: 4vmax;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(78, 81, 255),
+    rgb(74, 137, 189));
 }
 
 .categoryBox {
@@ -81,17 +96,18 @@
 
 .category-link {
   list-style: none;
-  color: rgba(0, 0, 0, 0.61);
-  font: 400 0.8vmax "Roboto";
+  color: white; 
+  font: 400 1.3vmax "Roboto";
   margin: 0.4vmax;
   cursor: pointer;
   transition: all 0.5s;
 }
+
 .category-link:hover {
-  color: tomato;
+  color: navy;
 }
 
-.filterBox > fieldset {
+.filterBox>fieldset {
   border: 1px solid rgba(0, 0, 0, 0.329);
 }
 
@@ -103,9 +119,10 @@
   }
 
   .page-link {
-    font: 300 1.7vmax "Roboto";
+    font: 300 2vmax "Roboto";
   }
+
   .category-link {
-    font: 400 1.8vmax "Roboto";
+    font: 400 2vmax "Roboto";
   }
 }

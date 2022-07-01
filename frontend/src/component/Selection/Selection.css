@@ -1,6 +1,7 @@
 .emptySelection {
   margin: auto;
   text-align: center;
+  background: linear-gradient(to right, white, lightblue);
   padding: 10vmax;
   height: 50vh;
   display: flex;
@@ -10,18 +11,18 @@
 }
 .emptySelection > svg {
   font-size: 5vmax;
-  color: tomato;
+  color: navy;
 }
 .emptySelection > p {
   font-size: 2vmax;
 }
 .emptySelection > a {
-  background-color: rgb(51, 51, 51);
-  color: white;
+  background-color:navy;
+  color:white;
   border: none;
   padding: 1vmax 3vmax;
   cursor: pointer;
-  font: 400 1vmax "Roboto";
+  font: 400 2vmax "Roboto";
   text-decoration: none;
 }
 
@@ -30,7 +31,10 @@
 }
 
 .selectionHeader {
-  background-color: tomato;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(78, 81, 255),
+    rgb(74, 137, 189));
   width: 90%;
   box-sizing: border-box;
   margin: auto;
@@ -61,7 +65,7 @@
 
 .selectionInput > button {
   border: none;
-  background-color: rgba(0, 0, 0, 0.616);
+  background-color:black;
   padding: 0.5vmax;
   cursor: pointer;
   color: white;
@@ -89,7 +93,7 @@
   box-sizing: border-box;
   font: 300 1vmax cursive;
   justify-content: flex-end;
-  color: rgba(0, 0, 0, 0.753);
+  color:black;
 }
 
 .selectionGrossProfit {
@@ -98,7 +102,7 @@
 }
 
 .selectionGrossProfitBox {
-  border-top: 3px solid tomato;
+  border-top: 3px solid navy;
   margin: 1vmax 4vmax;
   box-sizing: border-box;
   padding: 2vmax 0;
@@ -112,12 +116,12 @@
   justify-content: flex-end;
 }
 .checkOutBtn > button {
-  background-color: tomato;
+  background-color: navy;
   color: white;
   border: none;
   padding: 0.8vmax 4vmax;
   width: 50%;
-  font: 300 0.8vmax "Roboto";
+  font: 300 1.1vmax "Roboto";
   margin: 1vmax 4vmax;
   cursor: pointer;
   border-radius: 30px;

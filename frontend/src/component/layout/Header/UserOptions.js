@@ -36,7 +36,26 @@ const UserOptions = ({ user }) => {
     });
   }
 
-  if (user.role !== "admin") {
+  else if (user.role === "Doctor") {
+    options.unshift(
+      {
+        icon: <ListAltIcon />,
+        name: "Appointments",
+        func: appointments,
+      },
+      {
+        icon: <EmailRoundedIcon />,
+        name: "Chat",
+        func: chat,
+      },
+      {
+        icon: <VideoCallRoundedIcon />,
+        name: "Video Call",
+        func: videoCall,
+      }
+    );
+  }
+  else if (user.role === "Patient") {
     options.unshift(
       {
         icon: <ListAltIcon />,
@@ -56,7 +75,7 @@ const UserOptions = ({ user }) => {
       {
         icon: (
           <BookIcon
-            style={{ color: selectionItems.length > 0 ? "tomato" : "unset" }}
+            style={{ color: selectionItems.length > 0 ? "navy" : "unset" }}
           />
         ),
         name: `Selection(${selectionItems.length})`,

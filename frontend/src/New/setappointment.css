@@ -5,7 +5,10 @@
     width: 500px;
     height: fit-content;
     border-radius: 12px;
-    background-color: white;
+    background-image: linear-gradient(
+    to bottom right,
+    skyblue,
+    rgb(74, 137, 189));
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
     flex-direction: column;
@@ -16,7 +19,7 @@
     font-family: inherit;
     width: 100%;
     border: 0;
-    border-bottom: 2px solid gray;
+    border-bottom: 2px solid black;
     outline: 0;
     font-size: 1.3rem;
     padding: 7px 0;
@@ -28,15 +31,17 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
 }
 .addMeetButton{
     margin: 10px;
     border: none;
-    color: black;
+    color:white;
     border-radius: 15px;
-    font-size: 20px;
+    font-size: 22px;
+    background: linear-gradient(to right, navy, blue);
 }
 .addMeetButton:hover{
-    background-color: tomato;
+    background: blue;
     cursor: pointer;
 }

@@ -10,8 +10,9 @@ import { useAlert } from "react-alert";
 import { useState } from "react";
 import axios from "axios";
 import UsersDoctorCard from "../../New/UsersDoctorCard";
+// import user from "../layout/Header/UserOptions"
 
-const Home = () => {
+const Home = (user) => {
   const alert = useAlert();
   const dispatch = useDispatch();
   const [doctors, setDoctors] = useState();
@@ -30,6 +31,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       // admin wale doctors
+      
       const res = await axios.get("http://localhost:4000/api/v1/doctors");
       console.log(res.data.doctors);
       // users me jo doctors hai
@@ -44,7 +46,7 @@ const Home = () => {
       // make sure to catch any error
       .catch(console.error);
   }, []);
-
+   
   return (
     <Fragment>
       {loading ? (
@@ -59,11 +61,11 @@ const Home = () => {
 
             <a href="#container">
               <button>
-                Scroll <CgMouse />
+                Doctors <CgMouse />
               </button>
             </a>
           </div>
-
+          
           <h2 className="homeHeading">On Site Doctors</h2>
 
           <div className="container" id="container">
@@ -85,7 +87,7 @@ const Home = () => {
         </Fragment>
       )}
     </Fragment>
-  );
+  );               
 };
 
 export default Home;

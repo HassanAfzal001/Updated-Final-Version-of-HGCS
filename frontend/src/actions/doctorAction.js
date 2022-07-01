@@ -39,13 +39,13 @@ export const getDoctor =
       dispatch({ type: ALL_DOCTOR_REQUEST });
 
       let link = `/api/v1/doctors?keyword=${keyword}&page=${currentPage}&fee[gte]=${fee[0]}&fee[lte]=${fee[1]}&ratings[gte]=${ratings}`;
-
+      
       if (category) {
         link = `/api/v1/doctors?keyword=${keyword}&page=${currentPage}&fee[gte]=${fee[0]}&fee[lte]=${fee[1]}&category=${category}&ratings[gte]=${ratings}`;
       }
 
       const { data } = await axios.get(link);
-
+      
       dispatch({
         type: ALL_DOCTOR_SUCCESS,
         payload: data,

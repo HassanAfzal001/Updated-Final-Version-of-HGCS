@@ -8,15 +8,19 @@
 
 .dashboardContainer {
   border-left: 1px solid rgba(0, 0, 0, 0.13);
-  background:linear-gradient(to right, lightpink, aqua);
+  background-image: linear-gradient(
+    to bottom right,
+    white,
+   lightblue);
   padding: 3rem 0;
 }
 
 .dashboardContainer > h1 {
-  background:linear-gradient(to right, orange, yellow);
+  background:linear-gradient(to right, navy, blue);
   font: 300 2rem "Roboto";
   text-align: center;
   width: 50%;
+  color:white;
   padding: 1.5rem;
   margin: auto;
 }
@@ -27,7 +31,7 @@
 
 .dashboardSummary > div {
   display: flex;
-  background:linear-gradient(to right,pink, blue);
+  background-color: rgba(70, 117, 218, 0.932);
   justify-content: center;
 }
 .dashboardSummary > div > p {
@@ -57,12 +61,12 @@
 }
 
 .dashboardSummaryBox2 > a:first-child {
-  background-color: rgb(255, 110, 110);
+  background-color:navy;
   color: rgb(255, 255, 255);
 }
 
 .dashboardSummaryBox2 > a:last-child {
-  background-color: rgb(51, 51, 51);
+  background-color: blue;
   color: rgb(255, 255, 255);
 }
 

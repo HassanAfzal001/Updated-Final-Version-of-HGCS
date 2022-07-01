@@ -1,8 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./videocallcontrol.css";
-
-const VideoCallControls = ({ leaveCall, mystream }) => {
+import Button from "@material-ui/core/Button";
+const VideoCallControls = ({
+  leaveCall,
+  mystream,
+  callAccepted,
+  callEnded,
+}) => {
     // console.log("mystream"+mystream);
   const muteUnmute = () => {
     // get current stream
@@ -80,6 +85,14 @@ const VideoCallControls = ({ leaveCall, mystream }) => {
           Leave
         </Link>
       </div>
+      <div>
+        {callAccepted && !callEnded && (
+          <Button variant="contained" color="secondary" onClick={leaveCall}>
+            End Call
+          </Button>
+        )}
+      </div>
+      
     </div>
   );
 };

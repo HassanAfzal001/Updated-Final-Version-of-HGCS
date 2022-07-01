@@ -228,7 +228,7 @@ const Messenger = () => {
               </>
             ) : (
               <span className="noConversationText">
-                No Chat. Open Conversation to start a chat
+                Chat Dashboard
               </span>
             )}
           </div>

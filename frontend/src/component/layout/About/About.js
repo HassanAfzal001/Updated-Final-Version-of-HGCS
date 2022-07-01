@@ -12,25 +12,25 @@ const About = () => {
       <div></div>
       <div className="aboutSectionGradient"></div>
       <div className="aboutSectionContainer">
-        <Typography component="h1">About Us</Typography>
+        <Typography component="h1">About Me</Typography>
 
         <div>
           <div>
             <Avatar
               style={{ width: "10vmax", height: "10vmax", margin: "2vmax 0" }}
-              src="https://res.cloudinary.com/tripleayt/image/upload/v1631555947/doctors/jpyibarlaxawvcvqjv5b.png"
-              alt="Founder"
+              src="https://res.cloudinary.com/dh9t9xesv/image/upload/v1655026284/Doctors/lanonynb07kdcdf0hn2n.png"
+              alt="Developer"
             />
-            <Typography>Hassan Afzal</Typography>
+            <Typography>Name: Hassan Afzal</Typography>
             <Button onClick={visitInstagram} color="primary">
-              Visit Instagram
+              Portfolio: Instagram
             </Button>
             <span>
-              This is my final year project about health care.
+              Myself from Comsats University Islamaad and this is my final year project about health care.
             </span>
           </div>
           <div className="aboutSectionContainer2">
-            <Typography component="h2">Our Services</Typography>
+            <Typography component="h2">Follow</Typography>
             <a
               href="https://www.youtube.com/channel/UCoK0oeZs_M71ZB3H3SE_LWw"
               target="blank"

@@ -7,7 +7,7 @@ import {
   removeItemsFromSelection,
 } from "../../actions/selectionAction";
 import { Typography } from "@material-ui/core";
-import RemoveShoppingCartIcon from "@material-ui/icons/RemoveShoppingCart";
+//import RemoveShoppingCartIcon from "@material-ui/icons/RemoveShoppingCart";
 import { Link } from "react-router-dom";
 
 const Selection = ({ history }) => {
@@ -42,7 +42,7 @@ const Selection = ({ history }) => {
     <Fragment>
       {selectionItems.length === 0 ? (
         <div className="emptySelection">
-          <RemoveShoppingCartIcon />
+          {/* <RemoveShoppingCartIcon /> */}
 
           <Typography>No Doctor in Your Selection</Typography>
           <Link to="/doctors">View Doctors</Link>
@@ -51,9 +51,9 @@ const Selection = ({ history }) => {
         <Fragment>
           <div className="selectionPage">
             <div className="selectionHeader">
-              <h5>Doctor</h5>
-              <h5> </h5>
-              <h5>Fees</h5>
+              <h2>Doctor</h2>
+              <h2> </h2>
+              <h2>Fees</h2>
             </div>
 
             {selectionItems &&
@@ -71,7 +71,7 @@ const Selection = ({ history }) => {
                     >
                       -
                     </button> */}
-                    <input type="number" value={item.quantity} readOnly />
+                    {/* <input type="number" value={item.quantity} readOnly /> */}
                     {/* <button
                       onClick={() =>
                         increaseQuantity(item.doctor, item.quantity, item.age)

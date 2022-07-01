@@ -1,7 +1,10 @@
 footer {
   margin-top: 10vmax;
   padding: 2vmax;
-  background-color: rgb(34, 33, 33);
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(78, 81, 255),
+    rgb(74, 137, 189));  
   color: white;
   display: flex;
   align-items: center;
@@ -39,10 +42,11 @@ footer {
 .midFooter > h1 {
   font-size: 3vmax;
   font-family: "Roboto";
-  color: crimson;
+  color: navy;
 }
 .midFooter > p {
   max-width: 60%;
+  font-size: 1.5vmax;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   margin: 1vmax auto;
 }
@@ -65,9 +69,9 @@ footer {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: white;
   transition: all 0.5s;
-  margin: 0.5vmax;
+  margin: 1.3vmax;
 }
 
 .rightFooter > a:hover {
-  color: #eb4034;
+  color: navy;
 }

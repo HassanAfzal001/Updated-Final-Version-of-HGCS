@@ -82,7 +82,7 @@ const Dashboard = () => {
               <p>Doctor</p>
               <p>{doctors && doctors.length}</p>
             </Link>
-            <Link to="/admin/appointments">
+            <Link to="/">
               <h11>Appointment</h11>
               <p>{appointments && appointments.length}</p>
             </Link>

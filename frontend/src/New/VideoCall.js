@@ -146,7 +146,12 @@ const VideoCall = () => {
                 style={{ width: "300px" }}
               />
             )}
-            <VideoCallControls leaveCall={leaveCall} mystream={stream} />
+            <VideoCallControls
+              leaveCall={leaveCall}
+              mystream={stream}
+              callAccepted={callAccepted}
+              callEnded={callEnded}
+            />
           </div>
           <div className="video">
             {callAccepted && !callEnded ? (
@@ -166,16 +171,18 @@ const VideoCall = () => {
             ) : null}
           </div>
         </div>
-        <ChatOnline
-          onlineUsers={onlineUsers}
-          currentId={user?._id}
-          handleChatOnlineClick={handleChatOnlineClick}
-          callUser={callUser}
-          idToCall={idToCall}
-          callAccepted={callAccepted}
-          callEnded={callEnded}
-          leaveCall={leaveCall}
-        />
+        {user.role !== "Doctor" && (
+          <ChatOnline
+            onlineUsers={onlineUsers}
+            currentId={user?._id}
+            handleChatOnlineClick={handleChatOnlineClick}
+            callUser={callUser}
+            idToCall={idToCall}
+            callAccepted={callAccepted}
+            callEnded={callEnded}
+            leaveCall={leaveCall}
+          />
+        )}
         <div>
           {receivingCall && !callAccepted ? (
             <div className="caller">

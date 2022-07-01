@@ -56,13 +56,7 @@ export default function ChatOnline({
           {callUser != undefined && (
             <div className="call-button">
               {callAccepted && !callEnded ? (
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  onClick={leaveCall}
-                >
-                  End Call
-                </Button>
+                <></>
               ) : (
                 <IconButton
                   color="primary"

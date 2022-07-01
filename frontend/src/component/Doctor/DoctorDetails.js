@@ -133,13 +133,13 @@ const DoctorDetails = ({ match }) => {
                 <h2>{doctor.name}</h2>
                 <p>Doctor # {doctor._id}</p>
               </div>
-              <div className="detailsBlock-2">
+              {/* <div className="detailsBlock-2">
                 <Rating {...options} />
                 <span className="detailsBlock-2-span">
                   {" "}
                   ({doctor.numOfReviews} Reviews)
                 </span>
-              </div>
+              </div> */}
               <div className="detailsBlock-3">
                 <h1>{`Rs  ${doctor.fee}`}</h1>
                 <div className="detailsBlock-3-1">
@@ -148,6 +148,7 @@ const DoctorDetails = ({ match }) => {
                     <input readOnly type="number" value={quantity} />
                     <button onClick={increaseQuantity}>+</button>
                   </div> */}
+                  
                   <button
                     disabled={doctor.Age < 1 ? true : false}
                     onClick={addToSelectionHandler}
@@ -168,9 +169,9 @@ const DoctorDetails = ({ match }) => {
                 Description : <p>{doctor.description}</p>
               </div>
 
-              <button onClick={submitReviewToggle} className="submitReview">
+              {/* <button onClick={submitReviewToggle} className="submitReview">
                 Submit Review
-              </button>
+              </button> */}
             </div>
           </div>
 

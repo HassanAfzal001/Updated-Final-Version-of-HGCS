@@ -19,11 +19,11 @@ const Notifications = ({ notifications, setNotifications }) => {
     const fetchData = async () => {
       // get the data from the api
       let res;
-      if (user.role == "Doctor") {
+      if (user.role === "Doctor") {
         res = await axios.get(
           `http://localhost:4000/notification/doctor/${userId}`
         );
-      } else if (user.role == "Patient") {
+      } else if (user.role === "Patient") {
         res = await axios.get(
           `http://localhost:4000/notification/patient/${userId}`
         );

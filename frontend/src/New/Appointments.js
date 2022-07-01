@@ -40,7 +40,7 @@ const Appointments = () => {
   const handleDeleteAppointment = (appointment) => {
     // delete an appointment
     // console.log(appointment);
-    const r = window.confirm("Would you like to remove this event?");
+    const r = window.confirm("Would you like to remove this appointment?");
     if (r === true) {
       axios
         .delete("http://localhost:4000/appointments/deleteAppointment", {
@@ -68,7 +68,7 @@ const Appointments = () => {
             </tr>
           </thead>
           <tbody>
-            {allAppointments?.length != 0 ? (
+            {allAppointments?.length !== 0 ? (
               allAppointments?.map((myObj, key) => {
                 var time = moment.utc(myObj.appointmentDate).format("HH:mm");
                 return (

@@ -1,7 +1,6 @@
 .paymentContainer {
   display: grid;
   place-items: center;
-  background: linear-gradient(to right, aqua, lightpink);
   height: 65vh;
   margin: 2vmax;
 }
@@ -9,12 +8,20 @@
 .paymentForm {
   width: 22%;
   height: 100%;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(78, 81, 255),
+    rgb(74, 137, 189));
 }
 
 .paymentForm > p {
   font: 400 2vmax "Roboto";
-  color: rgba(0, 0, 0, 0.753);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+  color:black;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(78, 81, 255),
+    rgb(74, 137, 189));
+  border-bottom: 1px solid navy;
   padding: 1vmax 0;
   text-align: center;
   width: 50%;
@@ -24,7 +31,7 @@
 .paymentForm > div {
   display: flex;
   align-items: center;
-  margin: 2vmax 0;
+  margin: 2vmax;
 }
 
 .paymentInput {
@@ -32,23 +39,24 @@
   padding-right: 1vmax;
   width: 100%;
   box-sizing: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.267);
+  border: 1px solid navy;
   border-radius: 4px;
   outline: none;
+  background-color: white;
 }
 
 .paymentForm > div > svg {
   position: absolute;
   transform: translateX(1vmax);
   font-size: 1.6vmax;
-  color: rgba(0, 0, 0, 0.623);
+  color:black;
 }
 
 .paymentFormBtn {
   border: none;
-  background-color: tomato;
+  background: linear-gradient(to right, navy, blue);
   color: white;
-  font: 300 0.9vmax "Roboto";
+  font: 300 1.1vmax "Roboto";
   width: 100%;
   padding: 0.8vmax;
   cursor: pointer;
@@ -57,7 +65,7 @@
 }
 
 .paymentFormBtn:hover {
-  background-color: rgb(179, 66, 46);
+  background-color: blue;
 }
 
 @media screen and (max-width: 600px) {

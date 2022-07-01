@@ -1,12 +1,12 @@
 .confirmAppointmentPage {
   height: 100vh;
-  background: linear-gradient(to right, lightgreen, aqua);
+  background: linear-gradient(to right,white, lightblue);
   display: grid;
   grid-template-columns: 6fr 3fr;
 }
 
 .confirmAppointmentPage > div:last-child {
-  border-left: 1px solid rgba(0, 0, 0, 0.247);
+  border-left: 1px solid black;
 }
 
 .confirmbookingArea {
@@ -15,7 +15,10 @@
 }
 
 .confirmbookingArea > p {
-  font: 400 1.8vmax "Roboto";
+  font: 400 2vmax "Roboto";
+  background-image: linear-gradient(
+    to right,
+    white, rgb(183, 228, 243));
 }
 
 .confirmbookingAreaBox,
@@ -29,17 +32,18 @@
 }
 
 .confirmbookingAreaBox > div > p {
-  font: 400 1vmax "Roboto";
+  font: 400 1.2vmax "Roboto";
   color: black;
 }
 .confirmbookingAreaBox > div > span {
   margin: 0 1vmax;
-  font: 100 1vmax "Roboto";
+  font: 100 1.2vmax "Roboto";
   color: #575757;
 }
 
 .confirmSelectionItems > p {
-  font: 400 1.8vmax "Roboto";
+  font: 400 2vmax "Roboto";
+  background: linear-gradient(to right,white, rgb(183, 228, 243))
 }
 
 .confirmSelectionItems {
@@ -54,7 +58,7 @@
 
 .confirmSelectionItemsContainer > div {
   display: flex;
-  font: 400 1vmax "Roboto";
+  font: 400 1.2vmax "Roboto";
   align-items: center;
   justify-content: space-between;
   margin: 2vmax 0;
@@ -65,15 +69,15 @@
 }
 
 .confirmSelectionItemsContainer > div > a {
-  color: #575757;
+  color:black;
   margin: 0 2vmax;
   width: 60%;
   text-decoration: none;
 }
 
 .confirmSelectionItemsContainer > div > span {
-  font: 100 1vmax "Roboto";
-  color: #5e5e5e;
+  font: 100 1.2vmax "Roboto";
+  color:black;
 }
 
 .appointmentSummary {
@@ -82,17 +86,20 @@
 
 .appointmentSummary > p {
   text-align: center;
-  font: 400 1.8vmax "Roboto";
-  border-bottom: 1px solid rgba(0, 0, 0, 0.267);
+  font: 400 2vmax "Roboto";
+  border-bottom: 1px solid black;
   padding: 1vmax;
   width: 100%;
   margin: auto;
   box-sizing: border-box;
-}
+  background-image: linear-gradient(
+    to right,
+    rgb(188, 225, 237), rgb(188, 225, 237));
+} 
 
 .appointmentSummary > div > div {
   display: flex;
-  font: 300 1vmax "Roboto";
+  font: 300 1.2vmax "Roboto";
   justify-content: space-between;
   margin: 2vmax 0;
 }
@@ -104,12 +111,12 @@
   display: flex;
   font: 300 1vmax "Roboto";
   justify-content: space-between;
-  border-top: 1px solid rgba(0, 0, 0, 0.363);
+  border-top: 1px solid black;
   padding: 2vmax 0;
 }
 
 .appointmentSummary > button {
-  background-color: tomato;
+  background:linear-gradient(to right, navy,blue) ;
   color: white;
   width: 100%;
   padding: 1vmax;

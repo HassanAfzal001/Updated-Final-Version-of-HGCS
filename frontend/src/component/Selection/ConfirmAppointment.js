@@ -65,7 +65,7 @@ const ConfirmAppointment = ({ history }) => {
             </div>
           </div>
           <div className="confirmSelectionItems">
-            <Typography>Your Selection Items:</Typography>
+            <Typography>Your Selected Appointments:</Typography>
             <div className="confirmSelectionItemsContainer">
               {selectionItems &&
                 selectionItems.map((item) => (

@@ -6,7 +6,10 @@
   top: 0%;
   left: 0%;
   max-width: 100%;
-  background: linear-gradient(to right, orange, pink);
+  background-image: linear-gradient(
+    to bottom right,
+    white,
+    lightblue);
 }
 
 .profileContainer > div {
@@ -20,13 +23,14 @@
 }
 
 .profileContainer > div:first-child > h1 {
-  color: rgba(0, 0, 0, 0.555);
-  font: 500 2.2vmax "Roboto";
+  color:black;
+  font: 400 2.2vmax "Roboto";
   transform: translateX(-10vmax) translateY(-2vmax);
 }
 
 .profileContainer > div:first-child > img {
   width: 20vmax;
+  height:20vmax;
   border-radius: 100%;
   transition: all 0.5s;
 }
@@ -37,8 +41,8 @@
 
 .profileContainer > div:first-child > a {
   border: none;
-  background-color: tomato;
-  font: 400 1vmax "Roboto";
+  background: linear-gradient(to right, navy, blue);
+  font: 400 1.3vmax "Roboto";
   color: white;
   text-decoration: none;
   padding: 0.5vmax;
@@ -49,7 +53,7 @@
 }
 
 .profileContainer > div:first-child > a:hover {
-  background-color: rgb(204, 78, 56);
+  background-color: navy;
 }
 
 .profileContainer > div:last-child {
@@ -61,12 +65,12 @@
 
 .profileContainer > div:last-child > div > h4 {
   color: black;
-  font: 400 1.2vmax "Roboto";
+  font: 400 2vmax "Roboto";
 }
 
 .profileContainer > div:last-child > div > p {
-  color: rgba(0, 0, 0, 0.418);
-  font: 400 1vmax cursive;
+  color: black;
+  font: 350 1.5vmax cursive;
   margin: 0.2vmax;
 }
 
@@ -78,8 +82,8 @@
 
 .profileContainer > div:last-child > div:last-child > a {
   border: none;
-  background-color: rgb(68, 68, 68);
-  font: 400 1vmax "Roboto";
+  background: linear-gradient(to right, navy, blue);
+  font: 400 1.3vmax "Roboto";
   color: white;
   text-decoration: none;
   padding: 0.5vmax;
@@ -89,7 +93,7 @@
 }
 
 .profileContainer > div:last-child > div:last-child > a:hover {
-  background-color: rgb(31, 31, 31);
+  background-color: navy;
 }
 
 @media screen and (max-width: 600px) {
@@ -122,7 +126,7 @@
   }
 
   .profileContainer > div:last-child > div:last-child > a {
-    font: 400 1.8vmax "Roboto";
+    font: 400 1.3vmax "Roboto";
     padding: 1vmax;
     margin: 2vmax 0;
   }

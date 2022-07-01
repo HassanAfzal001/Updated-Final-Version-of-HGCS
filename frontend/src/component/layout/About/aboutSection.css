@@ -2,7 +2,10 @@
   height: 100vh;
   width: 100vw;
   max-width: 100%;
-  background: linear-gradient(to right, purple, pink);
+  background-image: linear-gradient(
+    to bottom right,
+    white,
+    lightblue);
   display: grid;
   grid-template-columns: 4fr 4fr;
   position: fixed;
@@ -11,8 +14,7 @@
 .aboutSectionGradient {
   background-image: linear-gradient(
     to bottom right,
-    rgb(78, 81, 255),
-    rgb(74, 137, 189)
+    white, lightblue
   );
 }
 
@@ -20,7 +22,10 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  background: linear-gradient(to right, purple, aqua);
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(78, 81, 255),
+    rgb(74, 137, 189));
   width: 80vw;
   height: 80vh;
   transform: translateX(-50%) translateY(-50%);
@@ -33,7 +38,11 @@
 
 .aboutSectionContainer > h1 {
   font: 400 3vmax "Roboto";
-  color: tomato;
+  color: white;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(78, 81, 255),
+    rgb(74, 137, 189));
   margin: 2vmax;
 }
 
@@ -52,17 +61,26 @@
 }
 
 .aboutSectionContainer > div > div > p {
-  color: rgba(0, 0, 0, 0.623);
-  font: 100 1vmax "Roboto";
+  color: white;
+  font: 100 1.2vmax "Roboto";
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(78, 81, 255),
+    rgb(74, 137, 189));
 }
 
 .aboutSectionContainer > div > div > button {
   margin: 1vmax 0;
+  color:white;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(78, 81, 255),
+    rgb(74, 137, 189));
 }
 
 .aboutSectionContainer > div > div > span {
-  font: 100 1vmax "Roboto";
-  color: rgba(0, 0, 0, 0.616);
+  font: 100 1.5vmax "Roboto";
+  color:white;
   text-align: center;
   width: 80%;
 }
@@ -72,22 +90,26 @@
 }
 
 .aboutSectionContainer2 > h2 {
-  color: rgba(0, 0, 0, 0.623);
+  color:white;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(78, 81, 255),
+    rgb(74, 137, 189));
   font: 100 2vmax "Roboto";
   margin: 2vmax;
 }
 
 .aboutSectionContainer2 > a > svg {
-  font-size: 4vmax;
-  color:white;
+  font-size: 8vmax;
+  color:rgb(223, 39, 39);
 }
 
 .youtubeSvgIcon {
-  color: tomato;
+  color: navy;
 }
 
 .instagramSvgIcon {
-  color: white;
+  color: navy;
 }
 
 @media screen and (max-width: 600px) {

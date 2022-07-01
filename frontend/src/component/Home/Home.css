@@ -1,6 +1,7 @@
-body{
-  background: linear-gradient(to right, lightpink, aqua);
+body {
+  background: linear-gradient(to right, white, lightblue);
 }
+
 .banner {
   background-image: url("../../images/panel.jpg");
   background-position: center;
@@ -15,38 +16,40 @@ body{
   color: white;
 }
 
-.banner > h1 {
+.banner>h1 {
   margin: 5vmax;
   color: black;
   font: 600 2.5vmax "Roboto";
 }
 
-.banner > p {
+.banner>p {
   font: 500 2.4vmax "Lucida Sans";
   color: black;
 }
 
-.banner > a > button {
+.banner>a>button {
   margin-bottom: 5vmax;
   cursor: pointer;
-  background-color: wheat;
-  border: 1px solid white;
+  color: white;
+  background: linear-gradient(to right, navy, blue);
+  border: 2px solid white;
   border-radius: 0;
   padding: 1vmax;
   transition: all 0.3s;
   width: 9vmax;
   font: 500 1vmax "Roboto";
 }
-.banner > a > button:hover {
-  background-color: rgba(255, 255, 255, 0);
-  color: white;
+
+.banner>a>button:hover {
+  background-color: green;
+  color: grey;
 }
 
 .banner::after {
   content: "";
   width: 100vw;
   height: 100vmin;
-  background: linear-gradient(to right, yellow, orange);
+  background: linear-gradient(to right, lightblue);
   position: absolute;
   top: 0%;
   left: 0;
@@ -58,11 +61,12 @@ body{
   text-align: center;
   font-family: Roboto;
   font-size: 1.4vmax;
+  color: white;
   border-bottom: 1px solid rgba(21, 21, 21, 0.5);
   width: 20vmax;
   padding: 1vmax;
   margin: 5vmax auto;
-  background: linear-gradient(to right, blue, aqua);
+  background: linear-gradient(to right, blue, navy);
 }
 
 .container {
@@ -72,7 +76,7 @@ body{
   flex-wrap: wrap;
   justify-content: center;
   max-width: 100%;
-  background: linear-gradient(to right, yellow, orange);
+  background: linear-gradient(to right, white, lightblue);
 }
 
 .doctorCard {
@@ -80,17 +84,21 @@ body{
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  background: linear-gradient(to right, white, yellow);
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(78, 81, 255),
+    rgb(74, 137, 189));
   margin: 2vmax;
   transition: all 0.5s;
   padding-bottom: 0.5vmax;
 }
 
-.doctorCard > img {
+.doctorCard>img {
   width: 14vmax;
+  height: 14vmax;
 }
 
-.doctorCard > div {
+.doctorCard>div {
   margin: 0.5vmax;
   display: flex;
   justify-content: flex-start;
@@ -100,16 +108,20 @@ body{
 .doctorCardSpan {
   margin: 0.5vmax;
   font: 300 0.7vmax "Roboto";
+  color: white;
 }
 
-.doctorCard > p {
+
+
+.doctorCard>p {
   font-family: "Roboto";
   font-size: 1.2vmax;
   margin: 1vmax 0.5vmax;
   margin-bottom: 0;
+  color: white;
 }
 
-.doctorCard > span {
+.doctorCard>span {
   margin: 0.5vmax;
   color: tomato;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -123,20 +135,20 @@ body{
 }
 
 @media screen and (max-width: 600px) {
-  .doctorCard > p {
+  .doctorCard>p {
     font-size: 1.7vmax;
   }
 
-  .doctorCard > div {
+  .doctorCard>div {
     margin: 0vmax;
     display: block;
   }
 
-  .doctorCard > span {
+  .doctorCard>span {
     font-size: 1.5vmax;
   }
 
-  .doctorCard > div > span {
+  .doctorCard>div>span {
     margin: 0 0.5vmax;
     font: 300 1vmax "Roboto";
   }

@@ -1,5 +1,5 @@
 .sidebar {
-  background:linear-gradient(to right, grey, white);
+  background:linear-gradient(to right, lightblue, white);
   display: flex;
   flex-direction: column;
   padding: 6rem 0;
@@ -14,11 +14,11 @@
 }
 
 .sidebar > a > img:hover {
-  filter: drop-shadow(0 0 10px tomato);
+  filter: drop-shadow(0 0 10px skyblue);
 }
 .sidebar a {
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.493);
+  color: black;
   font: 200 1rem "Roboto";
   padding: 2rem;
   transition: all 0.5s;

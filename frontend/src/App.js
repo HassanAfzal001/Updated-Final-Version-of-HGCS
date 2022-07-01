@@ -81,7 +81,7 @@ function App() {
   useEffect(() => {
     socket.emit("addUser", user?._id);
   }, [user]);
-
+  
   useEffect(() => {
     socket.on("receiveNotification", (data) => {
       // alert("Appointment Notification");

@@ -5,14 +5,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to right, orange, pink);
+  background-image: linear-gradient(
+    to bottom right,
+    white,
+   lightblue);
   position: fixed;
   top: 0%;
   left: 0;
 }
 
 .LoginSignUpBox {
-  background: linear-gradient(to right, brown, pink);
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(78, 81, 255),
+    rgb(74, 137, 189));
   width: 25vw;
   height: 70vh;
   box-sizing: border-box;
@@ -23,8 +29,8 @@
   height: 3vmax;
 }
 .login_signUp_toggle > p {
-  color: rgba(0, 0, 0, 0.678);
-  font: 300 1vmax "Roboto";
+  color:white;
+  font: 300 1.5vmax "Roboto";
   transition: all 0.5s;
   cursor: pointer;
   display: grid;
@@ -32,11 +38,11 @@
   width: 100%;
 }
 .login_signUp_toggle > p:hover {
-  color: tomato;
+  color: navy;
 }
 
 .LoginSignUpBox > div > button {
-  background-color: tomato;
+  background-color:navy;
   height: 3px;
   width: 50%;
   border: none;
@@ -113,21 +119,21 @@
   height: 5vh;
   border: none;
   margin: 0%;
-  font: 400 0.8vmax cursive;
+  font: 400 0.9vmax cursive;
   transition: all 0.5s;
   padding: 0 1vmax;
-  color: rgba(0, 0, 0, 0.623);
-  background-color: rgb(255, 255, 255);
+  color:white;
+  background-color: navy;
 }
 
 #registerImage > input::file-selector-button:hover {
-  background-color: rgb(235, 235, 235);
+  background-color:blue;
 }
 
 .loginBtn,
 .signUpBtn {
   border: none;
-  background-color: tomato;
+  background-color:Navy;
   color: white;
   font: 300 0.9vmax "Roboto";
   width: 100%;
@@ -141,7 +147,7 @@
 
 .loginBtn:hover,
 .signUpBtn:hover {
-  background-color: rgb(179, 66, 46);
+  background-color:blue;
 }
 
 .shiftToLeft {

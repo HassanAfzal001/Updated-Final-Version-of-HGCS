@@ -5,11 +5,14 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: linear-gradient(to right, black, white);
+  background: linear-gradient(to right,white, lightblue);
 }
 
 .bookingBox {
-  background: linear-gradient(to right, purple, blue);
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(78, 81, 255),
+    rgb(74, 137, 189));
   width: 25vw;
   height: 90vh;
   box-sizing: border-box;
@@ -18,10 +21,10 @@
 
 .bookingHeading {
   text-align: center;
-  color: rgba(0, 0, 0, 0.664);
-  font: 400 1.3vmax "Roboto";
+  color:white;
+  font: 400 1.5vmax "Roboto";
   padding: 1.3vmax;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.205);
+  border-bottom: 1px solid navy;
   width: 50%;
   margin: auto;
 }
@@ -31,7 +34,7 @@
   flex-direction: column;
   align-items: center;
   margin: auto;
-  padding: 2vmax;
+  padding: 3vmax;
   justify-content: space-evenly;
   height: 80%;
   transition: all 0.5s;
@@ -49,9 +52,9 @@
   padding-right: 1vmax;
   width: 100%;
   box-sizing: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.267);
+  border: 1px solid navy;
   border-radius: 4px;
-  font: 300 0.9vmax cursive;
+  font: 350 1.1vmax cursive;
   outline: none;
 }
 
@@ -59,12 +62,15 @@
   position: absolute;
   transform: translateX(1vmax);
   font-size: 1.6vmax;
-  color: rgba(0, 0, 0, 0.623);
+  color:black;
 }
 
 .bookingBtn {
   border: none;
-  background-color: tomato;
+  background-image: linear-gradient(
+    to bottom right,
+    navy,
+   blue);
   color: white;
   font: 300 1vmax "Roboto";
   width: 100%;

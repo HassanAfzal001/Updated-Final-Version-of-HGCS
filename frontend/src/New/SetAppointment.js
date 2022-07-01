@@ -34,7 +34,7 @@ const SetAppointment = () => {
     socket.on("receiveNotification", (data) => {
       // alert("Appointment Notification");
       if (data.text === "Deleted") {
-        if (user._id !== data.from) {
+        if (user._id !== data.from ) {
           const res = axios
             .get(`http://localhost:4000/users/${data.from}`)
             .then((data) => {
@@ -76,68 +76,137 @@ const SetAppointment = () => {
       console.log(data);
     });
   }, [socket]);
-
-  // Add a meeting
-  const addAppointment = () => {
-    if (newAppointment.need && doctorId && newAppointment.appointmentDate) {
-      // check whether selected date is in the past or not
-      var now = new Date();
-      // now.setHours(0, 0, 0, 0);
-      if (newAppointment.appointmentDate < now) {
-        alert("Selected date is in the past. Please Choose Another Date");
-      } else {
-        console.log("Selected date is NOT in the past");
-        socket.emit("sendNotification", {
-          from: user._id,
-          to: doctorId,
-          text: "AppointmentRequest",
-        });
-        let userId = user._id;
-        const myObj = {
-          need: newAppointment.need,
-          doctorId: doctorId,
-          doctorName: doctorName,
-          userId: userId,
-          userName: user.name,
-          appointmentDate: fixTimezoneOffset(newAppointment.appointmentDate),
-        };
-
-        const myObjj = {
-          senderId: user._id,
-          senderName: user.name,
-          receiverId: doctorId,
-          receiverName: doctorName,
-          text: "New Appointment Request",
-          appointmentId: newAppointment._id,
-        };
-
-        //   console.log(myObj);
-        axios
-          .post("http://localhost:4000/appointments/addNewAppointment", myObj)
-          .then((res) => {
-            console.log("Appointment Added: ");
-            // console.log(res);
-            console.log(res.data);
-          });
-        axios
-          .post("http://localhost:4000/notification/addNewNotification", myObjj)
-          .then((res) => {
-            console.log("Notification Added");
-            // console.log(res);
-            console.log(res.data);
-          });
-        setNewAppointment({
-          need: "",
-          appointmentDate: "",
-        });
-        setDoctorId();
-        setDoctorName();
-        // history.push("/appointmentrequests");
-      }
+  
+ // Add a meeting
+ const addAppointment = () => {
+  if (newAppointment.need && doctorId && newAppointment.appointmentDate) {
+    // check whether selected date is in the past or not
+    var now = new Date();
+    // console.log(now.getMonth());
+    // console.log(newAppointment.appointmentDate.getMonth());
+    if (newAppointment.appointmentDate < now) {
+      alert("Selected date is in the past. Please Choose Another Date");
     } else {
-      alert("Please Fill All Required Fields");
+      console.log("Selected date is NOT in the past");
+      let selectedYear = newAppointment.appointmentDate.getFullYear();
+      let selectedMonth = newAppointment.appointmentDate.getMonth();
+      let nowYear = now.getFullYear();
+      let nowMonth = now.getMonth();
+      if (selectedYear === nowYear) {
+        if (selectedMonth >= nowMonth + 3) {
+          alert("Please Choose the date in the next three months");
+        } else {
+          var date = fixTimezoneOffset(newAppointment.appointmentDate);
+          // var check = appointmentCheck(doctorId, date);
+          // console.log(check);
+          // 2 appointment for the same doctor should not be added
+          const res = axios
+            .get(`http://localhost:4000/appointments/doctor/${doctorId}`)
+            .then((data) => {
+              const found = data.data.find((obj) => {
+                return (
+                  obj.doctorId === doctorId && obj.appointmentDate === date
+                );
+              });
+
+              console.log(found);
+              // obj.appointmentDate === date
+
+              if (found) {
+                alert(
+                  "Appointment cannot be booked at this time. Choose another Time Please"
+                );
+              } else {
+                var datee = fixTimezoneOffset(newAppointment.appointmentDate);
+                const res = axios
+                  .get(
+                    `http://localhost:4000/appointments/patient/${user._id}`
+                  )
+                  .then((data) => {
+                    const anotherFound = data.data.find((obj) => {
+                      return (
+                        obj.userId === user._id &&
+                        obj.appointmentDate === datee
+                      );
+                    });
+                    if (anotherFound) {
+                      alert(
+                        "You already have an appointment at this time. choose Another time Please"
+                      );
+                    } else {
+                      socket.emit("sendNotification", {
+                        from: user._id,
+                        to: doctorId,
+                        text: "AppointmentRequest",
+                      });
+                      let userId = user._id;
+                      const myObj = {
+                        need: newAppointment.need,
+                        doctorId: doctorId,
+                        doctorName: doctorName,
+                        userId: userId,
+                        userName: user.name,
+                        appointmentDate: fixTimezoneOffset(
+                          newAppointment.appointmentDate
+                        ),
+                      };
+
+                      const myObjj = {
+                        senderId: user._id,
+                        senderName: user.name,
+                        receiverId: doctorId,
+                        receiverName: doctorName,
+                        text: "New Appointment Request",
+                        appointmentId: newAppointment._id,
+                      };
+
+                      //   console.log(myObj);
+                      axios
+                        .post(
+                          "http://localhost:4000/appointments/addNewAppointment",
+                          myObj
+                        )
+                        .then((res) => {
+                          console.log("Appointment Added: ");
+                          // console.log(res);
+                          console.log(res.data);
+                        });
+                      axios
+                        .post(
+                          "http://localhost:4000/notification/addNewNotification",
+                          myObjj
+                        )
+                        .then((res) => {
+                          console.log("Notification Added");
+                          // console.log(res);
+                          console.log(res.data);
+                        });
+                      setNewAppointment({
+                        need: "",
+                        appointmentDate: "",
+                      });
+                      setDoctorId();
+                      setDoctorName();
+                      // history.push("/appointmentrequests");
+                    }
+                  });
+              }
+            })
+            .catch((err) => {
+              console.log(
+                "Error in SET Appointment component function add apppointment" +
+                  err
+              );
+            });
+        }
+      } else {
+        alert("Please Choose the date in the next three months");
+      }
     }
-  };
+  } else {
+    alert("Please Fill All Required Fields");
+  }
+};
 
   // Get all doctors
   useEffect(() => {

@@ -9,6 +9,18 @@ import Slider from "@material-ui/core/Slider";
 import { useAlert } from "react-alert";
 import Typography from "@material-ui/core/Typography";
 import MetaData from "../layout/MetaData";
+import { createTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/core/styles';
+import UsersDoctorCard from "../../New/UsersDoctorCard";
+
+const theme = createTheme({
+ typography: {
+   body1: {
+    font: 2,
+    fontWeight: 600 // or 'bold'
+   }
+ }
+})
 
 const categories = [
   "Neuro Surgeon",
@@ -31,6 +43,7 @@ const Doctors = ({ match }) => {
   //const [ratings, setRatings] = useState(0);
 
   const {
+    userdoctors,
     doctors,
     loading,
     error,
@@ -38,6 +51,8 @@ const Doctors = ({ match }) => {
     resultPerPage,
     filteredDoctorsCount,
   } = useSelector((state) => state.doctors);
+
+  
 
   const keyword = match.params.keyword;
 
@@ -72,11 +87,19 @@ const Doctors = ({ match }) => {
             {doctors &&
               doctors.map((doctor) => (
                 <ProductCard key={doctor._id} doctor={doctor} />
+                
+              ))}
+          </div>
+          {/* user doctors */}
+          <div className="userdoctors">
+            {userdoctors &&
+              userdoctors.map((userdoctor) => (
+                <UsersDoctorCard key={userdoctor._id} doctor={userdoctor} />
               ))}
           </div>
 
           <div className="filterBox">
-            <Typography>Fee</Typography>
+            {/* <Typography>Fee</Typography>
             <Slider
               value={fee}
               onChange={feeHandler}
@@ -84,9 +107,9 @@ const Doctors = ({ match }) => {
               aria-labelledby="range-slider"
               min={0 || "Free"}
               max={25000}
-            />
-
-            <Typography>Categories</Typography>
+            /> */}
+             <ThemeProvider theme={theme}>
+            <Typography >Categories </Typography></ThemeProvider>
             <ul className="categoryBox">
               {categories.map((category) => (
                 <li
