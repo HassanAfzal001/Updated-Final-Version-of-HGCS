@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const SelectionItemCard = ({ item, deleteSelectionItems }) => {
   return (
     <div className="SelectionItemCard">
-      <img src={item.image} alt="ssa" />
+      {/* <img src={item.images} alt="ssa" /> */}
       <div>
         <Link to={`/doctor/${item.doctor}`}>{item.name}</Link>
         <span>{`Fee: Rs  ${item.fee}`}</span>

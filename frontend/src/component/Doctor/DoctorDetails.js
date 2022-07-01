@@ -175,7 +175,7 @@ const DoctorDetails = ({ match }) => {
             </div>
           </div>
 
-          <h3 className="reviewsHeading">REVIEWS</h3>
+          {/* <h3 className="reviewsHeading">REVIEWS</h3> */}
 
           <Dialog
             aria-labelledby="simple-dialog-title"
@@ -216,7 +216,7 @@ const DoctorDetails = ({ match }) => {
                 ))}
             </div>
           ) : (
-            <p className="noReviews">No Reviews Yet</p>
+            <p className="noReviews"></p>
           )}
         </Fragment>
       )}
